@@ -1,0 +1,24 @@
+<p>Executing test script '<strong><%= @suite %></strong>'.</p>
+<div id='view'>
+
+<!-- Set test_in_progress to true when page is first loaded. -->
+<!-- it'll get set o false when the last line of the console log is seen -->
+<script type="text/javascript">
+  //<![CDATA[
+    test_in_progress = true;
+  //]]>
+</script>
+
+<!-- use periodically_call_remote to display console log every few secs -->
+<%= periodically_call_remote(
+  :condition => 'test_in_progress == true',
+  :update => 'consolelog',
+  :frequency => 2,
+  :url => { :action => :viewconsole }) %>
+
+<!-- FIXME: Need some way to stop/start refreshing of the console log. -->
+<hr>
+<h2>Console output:</h2>
+<div id='consolelog'></div>
+
+</div>

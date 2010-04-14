@@ -1,0 +1,1 @@
+ruby -CC:/Users/Daniel/Downloads/Programming/runner/script/../db/test_files/suites C:/Users/Daniel/Downloads/Programming/runner/script/../db/test_files/suites/hello.rb -- -v verbose > log/runner/console-2010-04-13_-_22-41-45.log

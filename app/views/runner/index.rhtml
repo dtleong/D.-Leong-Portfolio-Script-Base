@@ -1,0 +1,8 @@
+<h1>Execute test suite</h1>
+<p>Click a test suite's filename to execute it.</p>
+
+<ul>
+<% @suites.each do |s| %>
+  <li><a href="/runner/runsuite?suite=<%= s %>"><%= s %></a></li>
+<% end %> 
+</ul>

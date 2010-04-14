@@ -1,0 +1,19 @@
+<!-- When the last line in @console_log is the test summary string, then
+     set test_in_progress to 'false' in JavaScript.  This will then stop
+     the ajax bits from refreshing the log view. -->
+<script type="text/javascript">
+   //<![CDATA[
+<% if @console_log[-1] =~ /^.*tests,.*assertions,.*failures.*errors/ %>
+     test_in_progress = false;
+<% else %>
+     test_in_progress = true;
+<% end %>
+   //]]>
+</script>
+
+<!-- Display all lines from @console_log when this page is requested -->
+<p>
+<% @console_log.each do |l| %>
+  <tt><%= l %></tt><br />
+<% end %>
+</p>
